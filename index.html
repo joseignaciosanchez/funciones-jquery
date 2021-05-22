@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My JQuery basic assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/jquery.css">
+    <script>
+        $(document).ready(function(){          
+            $('#btnAdd').click(function(){
+                //console.log("Entrando al click");
+                $('#p1').addClass('text-danger');                
+            });
+            $('#btnSlideToggle').click(function(){
+                $('.imgSt').slideToggle();                
+            });
+            $('#btnAppend').click(function(){                
+                $('#p3').append('. <b>Se ha agregado un párrafo</b>');                
+            });
+            $('.btnHide').click(function(){                
+                $('.p4').hide();               
+            });
+            $('.btnShow').click(function(){                
+                $('.p4').show();               
+            });
+            $('#btnToggle').click(function(){                
+                $('#p5').toggle();               
+            });            
+            $('.btnSlideUp').click(function(){                
+                $('.p6').slideUp();               
+            });
+            $('.btnSlideDown').click(function(){                
+                $('.p6').slideDown();               
+            });
+            $('.btnFadeOut').click(function(){                
+                $('.bloqueFadeInOut2').fadeOut(1000, function(){
+                    $('.bloqueFadeInOut').fadeOut(1000);
+                });               
+            });
+            $('.btnFadeIn').click(function(){                
+                $('.bloqueFadeInOut2').fadeIn(1000, function(){
+                    $('.bloqueFadeInOut').fadeIn(1000);
+                });               
+            });            
+            $('#btnBefore').click(function(){                
+                $('.parraf').before('<b>Hola Mundo</b>');                
+            });
+            $('#btnAfter').click(function(){                
+                $('.parraf2').after('<b>Hola Mundo</b>');                
+            });
+            $('#p10').click(function(){
+                $('#p10').html("<strong>Hola, este es el nuevo contenido</strong>");
+                $('#p10').css("cursor", "auto");
+            });
+            $('#btnAttr').click(function(){
+                $('.imgAttr').attr('width','100');
+            });
+            $('#btnVal').click(function(){
+                $('.form-control').val('Jose Sanchez');
+            });
+            $('#p13').click(function(){
+                $('#p13').text('El párrafo ha cambiado');
+                $('#p13').css("cursor", "auto");
+            });
+        });
+    </script>
+</head> 
+<body>
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>AddClass</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-1 offset-2">
+                    <button id="btnAdd">AddClass</button>                
+                </div>
+                <div class="col-8">
+                    <p id="p1">Haga clic en el botón para agregar la clase 'red' a este párrafo</p>                    
+                </div>
+            </div>                                                    
+            <hr class="bg-dark">
+        </div>                
+    </div>  
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>SlideToggle</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-1 offset-2">
+                    <button id="btnSlideToggle">SlideToggle</button>                
+                </div>
+                <div class="col-8">
+                    <p id="p2">Haga clic en el botón para deslizar y alternar una imagen oculta</p>                                        
+                </div>
+            </div>                                                    
+            <img class="imgSt mx-auto" src="images/ninja.png" alt="">
+            <hr class="bg-dark">
+        </div>                
+    </div>  
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Append</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-2 offset-2">
+                    <button id="btnAppend">Append</button>                
+                </div>
+                <div class="col-6">
+                    <p id="p3">Haga clic en el botón para agregar un nuevo párrafo!</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div>  
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Hide / Show</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <p class="p4">Haga clic en el botón para ocultar/mostrar este texto</p>
+                    <button class="btnHide">Hide Text</button>  
+                    <button class="btnShow">Show Text</button>  
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Toggle</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-2 offset-2">
+                    <button id="btnToggle">Toggle</button>                
+                </div>
+                <div class="col-6">
+                    <p id="p5">Haga clic en el botón para Alternar entre hide() y show()</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>SlideUp / SlideDown</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <p class="p6">Haga clic en el botón para deslizar</p>
+                    <button class="btnSlideUp">SlideUp</button>  
+                    <button class="btnSlideDown">SlideDown</button>  
+                    <!--<div class="bloqueSliDown bg-warning"></div>-->
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>FadeOut / FadeIn</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <p class="p7">Haga clic en el botón para desaparecer/aparecer los elementos atenuándolos</p>
+                    <button class="btnFadeOut">FadeOut</button>
+                    <button class="btnFadeIn">FadeIn</button>                                            
+                    <div class="bloqueFadeInOut mt-3 bg-warning"></div>
+                    <div class="bloqueFadeInOut2 bg-danger"></div>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div>  
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Before</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-1 offset-2">
+                    <button id="btnBefore">Before</button>                
+                </div>
+                <div class="col-7">
+                    <p id="p8">Haga clic en el botón para Insertar contenido Antes de cada párrafo</p>
+                    <p class="parraf p-0 m-0">Este es un párrafo.</p>
+                    <p class="parraf p-0 m-0">Este es un párrafo.</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>After</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-1 offset-2">
+                    <button id="btnAfter">After</button>                
+                </div>
+                <div class="col-7">
+                    <p id="p9">Haga clic en botón para Insertar contenido Después de cada párrafo</p>
+                    <p class="parraf2 p-0 m-0">Este es un párrafo.</p>
+                    <p class="parraf2 p-0 m-0">Este es un párrafo.</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Html</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <!--<div class="col-2 offset-1">
+                    <button id="btnHtml">Html</button>                
+                </div>-->
+                <div class="col-6 offset-3">
+                    <p id="p10">Haga clic en este párrafo para cambiarlo</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Attr</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-2 offset-1">
+                    <button id="btnAttr">Attr</button>                
+                </div>
+                <div class="col-8">
+                    <p id="p11">¡Haga clic en el botón para Establecer el atributo de ancho de la imagen</p>
+                </div>
+            </div>    
+            <img class="imgAttr mx-auto" src="images/ninja.png" alt="">                    
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Val</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <div class="col-2 offset-1">
+                    <button id="btnVal">Val</button>                
+                </div>
+                <div class="col-8">
+                    <p id="p12">Haga clic en el botón para establecer un valor en el campo de entrada</p>
+                    <input class="form-control form-control-sm" type="text" placeholder="" readonly>
+                </div>
+            </div>                   
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+    <div id="row">        
+        <div class="col-12 text-center">
+            <h1>Text</h1>
+        </div>        
+        <div class="col-8 offset-2 text-center">
+            <div class="row">
+                <!--<div class="col-2 offset-1">
+                    <button id="btnHtml">Html</button>                
+                </div>-->
+                <div class="col-6 offset-3">
+                    <p id="p13">Haga clic en este párrafo para cambiarlo</p>
+                </div>
+            </div>                        
+            <hr class="bg-dark">
+        </div>                
+    </div> 
+</body>
+</html>

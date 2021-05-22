@@ -1,0 +1,27 @@
+/*.red{
+    color: red;
+}
+.btnAdd,#p1{
+    display: inline-block;
+}
+body{
+    text-align: center;
+}*/
+hr{
+    height: 2px;
+}
+.imgSt{
+    height: 100px;
+}
+#bloqueSliToggle,.bloqueSliDown,.imgSt{
+    display: none;
+}
+.bloqueSliDown,.bloqueSliUp,.bloqueFadeInOut,.bloqueFadeInOut2{
+    height: 20px;
+}
+#p13{
+    cursor: pointer;
+}
+.imgAttr{
+    height: 100px;
+}
